@@ -1,4 +1,8 @@
 package com.example.jobApplicationTracker.repository;
 
-public interface UserRepository {
+import com.example.jobApplicationTracker.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserRepository extends JpaRepository<User, Long> {
+    User findByEmail(String username);
 }
